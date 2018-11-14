@@ -1,0 +1,12 @@
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{%block content%}
+<p>User <b>{{user.username}}</b>is loggedin</p>
+<form method="POST" action="/logout/" class="form">
+        {% csrf_token %}
+            {% buttons %}
+        <input type="submit" value="logout">
+        {% endbuttons %}
+</form>
+{%endblock%}
